@@ -7,5 +7,8 @@ $path = 'modele/gallerie/' . $nom;
 
 ?>
 
-<p><a href=<?php echo $path ?>  download=<?php echo $nom ?> >Download picture</a></p>
-
+<div class="download_picture">
+<p>
+<a href=<?php echo $path ?>  download=<?php echo $nom ?> >Download picture</a>
+</p>
+</div>

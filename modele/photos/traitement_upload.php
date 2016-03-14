@@ -84,8 +84,18 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
 						$im = ImageCreateFromjpeg($oldname); 
 						$width=ImageSx($im);              
 						$height=ImageSy($im);
-						$n_width = 230; 
-						$n_height = intval($n_width * $height / $width);
+
+						if($width<$height)
+						{
+							$n_height = 250; 
+							$n_width = intval($n_height * $width / $height);
+						}
+						else
+						{
+							$n_width = 250; 
+							$n_height = intval($n_width * $height / $width);
+						}
+
 						$newimage=imagecreatetruecolor($n_width,$n_height);                 
 						imageCopyResampled($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
 						ImageJpeg($newimage,$newname);
@@ -97,8 +107,18 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
 						$im = ImageCreateFromPNG($oldname); 
 						$width=ImageSx($im);              
 						$height=ImageSy($im);
-						$n_width = 230; 
-						$n_height = intval($n_width * $height / $width);
+
+						if($width<$height)
+						{
+							$n_height = 250; 
+							$n_width = intval($n_height * $width / $height);
+						}
+						else
+						{
+							$n_width = 250; 
+							$n_height = intval($n_width * $height / $width);
+						}
+
 						$newimage=imagecreatetruecolor($n_width,$n_height);                 
 						imageCopyResampled($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
 						ImagePng($newimage,$newname);

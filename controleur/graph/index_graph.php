@@ -7,22 +7,23 @@ include('vue/header.php');
 include('vue/menu.php');
 						
 ?>
-<div id="conteneur">
 
-    <div class="element">
-    <?php
+<div id="corps_graph">
+
+	<div id="branche_graph">
+	<?php
 	include('vue/graph/graph_branche1.php');
 	?>
-    </div>
+	</div>
 
-    <div class="element">
-    <?php
+	<div id="branche_graph">
+	<?php
 	include('vue/graph/graph_branche2.php');
 	?>
-    </div>
+	</div>
 
-    <div class="element">
-    <?php
+	<div id="branche_graph">
+	<?php
 	include('vue/graph/graph_branche3.php');
 	?>
 	</div>
@@ -30,4 +31,6 @@ include('vue/menu.php');
 </div>
 
 <?php
-include('vue/footer.php');
+
+
+include('vue/footer_graph.php');

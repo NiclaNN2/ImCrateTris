@@ -19,7 +19,6 @@ $nom_photo =  $donnees['nom_photo'];
 $adresse = "modele/gallerie_thumbnails/".$nom_photo;
 
 ?>
-	<p class="photo_de_la_collection">
 		<figure>
     			<img src=<?php echo $adresse ?> alt="Pantheon" />
 		</figure>

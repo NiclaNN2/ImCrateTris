@@ -7,7 +7,7 @@
     </head>
         
     <header>
-	<h1> ImCrate </h1>
+	<h1><a href="main.php">ImCrate </a></h1>
 	</header>
 	
 	<body>

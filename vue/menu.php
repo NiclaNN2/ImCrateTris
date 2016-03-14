@@ -1,16 +1,16 @@
 <nav>        
     <div id="menu_footer">
 
-            <div>
-            <p><a href="main.php">Main </a></p>
+            <div class="bouton">
+            <p><a href="main.php">  <?php echo '</br>'; ?> </a></p>
             </div>
            	
-           	<div>
-            <p><a href="graph.php">Graph </a></p>
+           	<div class="bouton">
+            <p><a href="graph.php">  <?php echo '</br>'; ?> </a></p>
             </div>
 
-            <div>
-            <p><a href="help.php">Help </a></p>
+            <div class="bouton">
+            <p><a href="help.php">   <?php echo '</br>'; ?> </a></p>
             </div>
     </div>    
 </nav>

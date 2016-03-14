@@ -9,27 +9,35 @@ include_once('modele/photos/photo_upload.id.php');
 
 ?>
 
-<div id="tout">
+<div id="tout_main">
 
+<div id="element">
 
-
-<div id="colonne">
-	
 	<div id="photo">
 	<?php
-	#echo 'photos_branche1'  . '</br>';
     include('vue/main/photos_branche1.php');
     ?>
 	</div>
 
-	<div id="upload">
+	<div id="photo">
 	<?php
-    include('vue/main/upload_branche1.php');
+    include('vue/main/photos_branche2.php');
     ?>
 	</div>
 
-	<div id='download'>
+	<div id="photo">
 	<?php
+    include('vue/main/photos_branche3.php');
+    ?>
+	</div>
+
+</div>
+
+<div id="element">
+
+	<div id="updown">
+	<?php
+    include('vue/main/upload_branche1.php');
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==1))
 		{
 		include('vue/main/proposition.php');
@@ -41,25 +49,9 @@ include_once('modele/photos/photo_upload.id.php');
 		?>
 	</div>
 
-</div>
-
-<div id="colonne">
-	
-	<div id="photo">
-	<?php
-	#echo 'photos_branche1'  . '</br>';
-    include('vue/main/photos_branche2.php');
-    ?>
-	</div>
-
-	<div id="upload">
+	<div id="updown">
 	<?php
     include('vue/main/upload_branche2.php');
-    ?>
-	</div>
-
-	<div id='download'>
-	<?php
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==2))
 		{
 		include('vue/main/proposition.php');
@@ -71,25 +63,9 @@ include_once('modele/photos/photo_upload.id.php');
 	?>
 	</div>
 
-</div>
-
-<div id="colonne">
-	
-	<div id="photo">
-	<?php
-	#echo 'photos_branche1'  . '</br>';
-    include('vue/main/photos_branche3.php');
-    ?>
-	</div>
-
-	<div id="upload">
+	<div id="updown">
 	<?php
     include('vue/main/upload_branche3.php');
-    ?>
-	</div>
-
-	<div id='download'>
-	<?php
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==3))
 		{
 		include('vue/main/proposition.php');
@@ -102,13 +78,9 @@ include_once('modele/photos/photo_upload.id.php');
 	</div>
 
 </div>
-
-
 </div>
 
-
 <?php
-
 
 include('vue/footer.php');
 
