@@ -1,3 +1,5 @@
-<?php
+<div id="texte">
+	
+	Terms.
 
-echo 'terms' . '<br/>';
+</div>

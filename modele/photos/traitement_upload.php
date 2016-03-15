@@ -100,6 +100,17 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
 						imageCopyResampled($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
 						ImageJpeg($newimage,$newname);
 						chmod($newname,0777);
+
+						/* Thumbnail -- graph */
+
+						$newname_graph = "../gallerie_thumbnails_graph/".$oldname;	
+						$n_width_graph = 250;
+						$n_height_graph = intval($n_width_graph * $height / $width);
+
+						$newimage_graph=imagecreatetruecolor($n_width_graph,$n_height);  
+						imageCopyResampled($newimage_graph,$im,0,0,0,0,$n_width_graph,$n_height_graph,$width,$height);
+						ImageJpeg($newimage_graph,$newname_graph);
+						chmod($newname_graph,0777);
 					}
 
 					if($extension_upload == 'png')
@@ -123,6 +134,17 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
 						imageCopyResampled($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
 						ImagePng($newimage,$newname);
 						chmod($newname,0777);
+
+						/* Thumbnail -- graph */
+
+						$newname_graph = "../gallerie_thumbnails_graph/".$oldname;	
+						$n_width_graph = 250;
+						$n_height_graph = intval($n_width_graph * $height / $width);
+
+						$newimage_graph=imagecreatetruecolor($n_width_graph,$n_height);  
+						imageCopyResampled($newimage_graph,$im,0,0,0,0,$n_width_graph,$n_height_graph,$width,$height);
+						ImagePng($newimage_graph,$newname_graph);
+						chmod($newname_graph,0777);
 					}
 				}
 

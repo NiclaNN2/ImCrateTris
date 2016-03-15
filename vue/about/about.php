@@ -1,3 +1,5 @@
-<?php
+<div id="texte">
+	
+	About.
 
-echo 'about' . '<br/>';
+</div>

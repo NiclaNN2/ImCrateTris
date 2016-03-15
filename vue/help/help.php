@@ -1,3 +1,5 @@
-<?php
+<div id="texte">
+	
+	Help.
 
-echo 'yo, this is the help page';
+</div>

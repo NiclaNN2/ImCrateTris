@@ -15,19 +15,22 @@ include_once('modele/photos/photo_upload.id.php');
 
 	<div id="photo">
 	<?php
-    include('vue/main/photos_branche1.php');
+	$branche=1;
+    include('vue/main/photos_branche.php');
     ?>
 	</div>
 
 	<div id="photo">
 	<?php
-    include('vue/main/photos_branche2.php');
+	$branche=2;
+    include('vue/main/photos_branche.php');
     ?>
 	</div>
 
 	<div id="photo">
 	<?php
-    include('vue/main/photos_branche3.php');
+	$branche=3;
+    include('vue/main/photos_branche.php');
     ?>
 	</div>
 

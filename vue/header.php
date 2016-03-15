@@ -7,7 +7,37 @@
     </head>
         
     <header>
-	<h1><a href="main.php">ImCrate </a></h1>
+	<h1>
+    <a href="main.php">ImCrate </a>
+    <?php
+    if($_SESSION['admin'])
+    {
+        
+    ?>
+
+    <div id="admin">
+        <p>
+        Admin
+        </p>
+
+        <p>
+        <form action="log_out_admin.php" method="post">
+        </p>
+       
+        </p>
+        Log out admin
+        <input type="submit" value="Valider" />
+        </p>
+         
+        </form>
+
+    </div>    
+
+    <?php    
+    }
+
+    ?>
+    </h1>
 	</header>
 	
 	<body>

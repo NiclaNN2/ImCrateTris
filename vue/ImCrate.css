@@ -83,6 +83,7 @@ background:url(../images/bouton-noir-2.png) no-repeat;
 	border: 1px solid black;
 	vertical-align: top;
 	width: 340px;
+	padding: 4px;
 }
 
 #corps_graph
@@ -104,4 +105,100 @@ background:url(../images/bouton-noir-2.png) no-repeat;
 	position: absolute;
 	top: 130px;
 	left: 130px;
+}
+
+h1
+{
+	color: black;
+	border: 1px solid black;
+	display: block;
+	width: 130px;
+	padding: 10px;
+	position: absolute;
+	left: 40px;
+	top: 20px;
+}
+
+a:link 
+{ 
+ 	text-decoration:none; 
+} 
+
+a
+{
+	color: black;
+}
+
+#texte
+{
+	display: block;
+	border: 1px solid black;
+	width: 800px;
+	position: absolute;
+	left: 100px;
+	top: 150px;
+
+}
+
+#photo_graph
+{
+	display: block;
+	border: 1px solid black;
+	padding-top: 6px;
+	padding-left: 3px;
+
+}
+
+.ligne_verticale
+{
+    width:5px;
+    border-left:1px solid black;
+    height:70px;
+    position: relative;
+    left: 160px;
+}
+
+#connexion_admin
+{
+	display: block;
+	border: 1px solid black;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	padding: 20px;
+
+}
+
+#admin
+{
+	font-size: 50%;
+}
+
+div.fileinputs {
+	position: relative;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+input.file {
+	position: relative;
+	left: 50px;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+
+#upload_element
+{
+	display: block;
+	flex-direction: column;
+	margin: 40px;
+	border: 1px solid black;
 }
