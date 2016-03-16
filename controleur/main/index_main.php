@@ -40,7 +40,8 @@ include_once('modele/photos/photo_upload.id.php');
 
 	<div id="updown">
 	<?php
-    include('vue/main/upload_branche1.php');
+	$branche = 1;
+    include('vue/main/upload_branche.php');
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==1))
 		{
 		include('vue/main/proposition.php');
@@ -54,7 +55,8 @@ include_once('modele/photos/photo_upload.id.php');
 
 	<div id="updown">
 	<?php
-    include('vue/main/upload_branche2.php');
+	$branche = 2;
+    include('vue/main/upload_branche.php');
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==2))
 		{
 		include('vue/main/proposition.php');
@@ -68,7 +70,8 @@ include_once('modele/photos/photo_upload.id.php');
 
 	<div id="updown">
 	<?php
-    include('vue/main/upload_branche3.php');
+	$branche = 3;
+    include('vue/main/upload_branche.php');
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==3))
 		{
 		include('vue/main/proposition.php');
