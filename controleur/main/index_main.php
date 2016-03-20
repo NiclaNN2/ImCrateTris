@@ -5,7 +5,14 @@ include('vue/header.php');
 
 include('vue/menu.php');
 
-include_once('modele/photos/photo_upload.id.php');
+try
+{
+    $bdd2 = new PDO('mysql:host=localhost;dbname=Imcrate', 'root', 'root');
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
 
 ?>
 
@@ -41,7 +48,8 @@ include_once('modele/photos/photo_upload.id.php');
 	<div id="updown">
 	<?php
 	$branche = 1;
-    include('vue/main/upload_branche.php');
+    include('sitepoint1.html');
+
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==1))
 		{
 		include('vue/main/proposition.php');
@@ -56,7 +64,8 @@ include_once('modele/photos/photo_upload.id.php');
 	<div id="updown">
 	<?php
 	$branche = 2;
-    include('vue/main/upload_branche.php');
+	include('sitepoint2.html');
+
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==2))
 		{
 		include('vue/main/proposition.php');
@@ -71,7 +80,8 @@ include_once('modele/photos/photo_upload.id.php');
 	<div id="updown">
 	<?php
 	$branche = 3;
-    include('vue/main/upload_branche.php');
+	include('sitepoint3.html');
+
 	if($_SESSION['transfert'] && ($_SESSION['branche_transfert']==3))
 		{
 		include('vue/main/proposition.php');

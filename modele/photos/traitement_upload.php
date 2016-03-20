@@ -23,6 +23,7 @@ $_SESSION['branche_transfert'] = $branche;
 
 $infos_photo = pathinfo($_FILES['photo']['name']);
 $extension_upload = $infos_photo['extension'];
+
 $extensions_autorisees = array('jpg', 'jpeg', 'png', 'JPG');
 
 echo 'branche : ' .  $branche . '</br>';

@@ -216,14 +216,55 @@ border          : 0px solid #def;
 	position: relative;
 	left: 30px;
 	width: 240px;
+
+}
+
+#filedrag1, #filedrag2, #filedrag3
+{
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+}
+
+#filedrag1.hover, #filedrag2.hover, #filedrag3.hover
+{
+	color: #f00;
+	border-color: #f00;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
 }
 
 
 
-input[type="file"] {
-  background-color:white; 
-  font:bold 14px Arial, Helvetica, sans-serif; 
-  color:red; 
-  border:0; 
-  cursor:pointer; 
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
