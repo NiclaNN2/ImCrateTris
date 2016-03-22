@@ -1,9 +1,21 @@
 // output information
 function Output2(file) {
-	//var m = $id("messages");
-	//m.innerHTML = msg + m.innerHTML;
+	//On remplace l'élément image par un canvas.
+
 	var photo2 = $id('photo2');
-	photo2.src = file;
+	var photo2_figure = photo2.firstElementChild;
+
+	var photo2_canvas = document.createElement('canvas');
+
+	var ctx2 = photo2_canvas.getContext('2d');
+	var img2 = new Image();
+	img2.onload = function() {
+        ctx2.drawImage(img2, 0, 0, 250, 250);    
+    }
+	img2.src = file;  
+
+	photo2.removeChild(photo2_figure);
+	photo2.appendChild(photo2_canvas);
 }
 
 // call initialization file
@@ -11,7 +23,6 @@ if (window.File && window.FileList && window.FileReader) {
 	Init();
 }
 
-//
 // initialize
 function Init() {
 
@@ -59,7 +70,7 @@ function FileSelectHandler(e) {
 	// process all File objects
 	for (var i = 0, f; f = files[i]; i++) {
 		ParseFile2(f);
-		UploadFile(f);
+		UploadFile2(f);
 	}
 
 }
@@ -84,7 +95,7 @@ function ParseFile2(file) {
 }
 
 // upload JPEG files
-function UploadFile(file) {
+function UploadFile2(file) {
 
 	//alert('salut');
 
@@ -92,7 +103,7 @@ function UploadFile(file) {
 	if (xhr.upload && (file.type == "image/jpeg" || file.type == "image/png") && file.size <= $id("MAX_FILE_SIZE").value) {
 		// start upload
 		//alert('salut');
-		xhr.open("POST", $id("upload").action, true);
+		xhr.open("POST", $id("upload2").action, true);
 		xhr.setRequestHeader("X_FILENAME", file.name);
 		xhr.send(file);
 		//alert('send');

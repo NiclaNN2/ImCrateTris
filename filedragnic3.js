@@ -1,9 +1,21 @@
 // output information
 function Output3(file) {
-	//var m = $id("messages");
-	//m.innerHTML = msg + m.innerHTML;
+	//On remplace l'élément image par un canvas.
+
 	var photo3 = $id('photo3');
-	photo3.src = file;
+	var photo3_figure = photo3.firstElementChild;
+
+	var photo3_canvas = document.createElement('canvas');
+
+	var ctx3 = photo3_canvas.getContext('2d');
+	var img3 = new Image();
+	img3.onload = function() {
+        ctx3.drawImage(img3, 0, 0, 250, 250);    
+    }
+	img3.src = file;  
+
+	photo3.removeChild(photo3_figure);
+	photo3.appendChild(photo3_canvas);   
 }
 
 // call initialization file
@@ -59,7 +71,8 @@ function FileSelectHandler(e) {
 	// process all File objects
 	for (var i = 0, f; f = files[i]; i++) {
 		ParseFile3(f);
-		UploadFile(f);
+		UploadFile3(f);
+
 	}
 
 }
@@ -85,7 +98,7 @@ function ParseFile3(file) {
 }
 
 // upload JPEG files
-function UploadFile(file) {
+function UploadFile3(file) {
 
 	//alert('salut');
 
@@ -93,7 +106,7 @@ function UploadFile(file) {
 	if (xhr.upload && (file.type == "image/jpeg" || file.type == "image/png") && file.size <= $id("MAX_FILE_SIZE").value) {
 		// start upload
 		//alert('salut');
-		xhr.open("POST", $id("upload").action, true);
+		xhr.open("POST", $id("upload3").action, true);
 		xhr.setRequestHeader("X_FILENAME", file.name);
 		xhr.send(file);
 		//alert('send');
@@ -103,6 +116,9 @@ function UploadFile(file) {
 	{
 		alert('bitch');
 	}
+
+	//window.refresh();
+
 
 }
 

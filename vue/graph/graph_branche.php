@@ -15,7 +15,7 @@ $req->execute(array($branche));
 while ($donnees = $req->fetch())
 {
 $nom_photo =  $donnees['nom_photo'];
-$adresse = "modele/gallerie_thumbnails_graph/".$nom_photo;
+$adresse = "photos_thumbnails_graph/".$nom_photo;
 
 
 if($_SESSION['admin'])
@@ -42,7 +42,9 @@ if($_SESSION['admin'])
 	<?php
 }
 
-?>
+		#echo 'nom_photo : ' . $nom_photo . '</br>';
+	
+		?>
 		<div class="ligne_verticale" ></div>
 		<div id="photo_graph">
 		<figure>

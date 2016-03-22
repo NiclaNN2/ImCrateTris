@@ -23,21 +23,21 @@ catch(Exception $e)
 	<div id="photo">
 	<?php
 	$branche=1;
-    include('vue/main/photos_branche.php');
+    include('vue/main/photos_branche1.php');
     ?>
 	</div>
 
 	<div id="photo">
 	<?php
 	$branche=2;
-    include('vue/main/photos_branche.php');
+    include('vue/main/photos_branche2.php');
     ?>
 	</div>
 
 	<div id="photo">
 	<?php
 	$branche=3;
-    include('vue/main/photos_branche.php');
+    include('vue/main/photos_branche3.php');
     ?>
 	</div>
 

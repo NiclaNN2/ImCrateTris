@@ -38,19 +38,19 @@ class Photo_upload
     }
     
 	public function creer_Photo($nom, $size, $branche) //On met l'identifiant du membre dans la table photo dans le champ id_proprietaire
-    {
-	global $bdd;
-	
-	$req2 = $bdd->prepare('INSERT INTO photos(nom_photo, size, branche) VALUES(:nom_photo, :size, :branche)');
-	$req2->execute(array(
-	'nom_photo' => $nom,
-	'size' => $size,
-	'branche' => $branche
-	));	
-	
-	$req2->closeCursor();
+	    {
+		global $bdd;
+		
+		$req2 = $bdd->prepare('INSERT INTO photos(nom_photo, size, branche) VALUES(:nom_photo, :size, :branche)');
+		$req2->execute(array(
+		'nom_photo' => $nom,
+		'size' => $size,
+		'branche' => $branche
+		));	
+		
+		$req2->closeCursor();
 
-    }
+	    }
     
     public function set_date_upload($nom_photo)
     {

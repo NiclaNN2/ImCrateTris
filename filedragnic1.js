@@ -3,13 +3,23 @@ function $id(id) {
 	return document.getElementById(id);
 }
 
-//
-// output information
 function Output1(file) {
-	//var m = $id("messages");
-	//m.innerHTML = msg + m.innerHTML;
+	//On remplace l'élément image par un canvas.
+
 	var photo1 = $id('photo1');
-	photo1.src = file;
+	var photo1_figure = photo1.firstElementChild;
+
+	var photo1_canvas = document.createElement('canvas');
+
+	var ctx1 = photo1_canvas.getContext('2d');
+	var img1 = new Image();
+	img1.onload = function() {
+        ctx1.drawImage(img1, 0, 0, 250, 250);    
+    }
+	img1.src = file;  
+
+	photo1.removeChild(photo1_figure);
+	photo1.appendChild(photo1_canvas);
 }
 
 // call initialization file
@@ -65,7 +75,7 @@ function FileSelectHandler(e) {
 	// process all File objects
 	for (var i = 0, f; f = files[i]; i++) {
 		ParseFile1(f);
-		UploadFile(f);
+		UploadFile1(f);
 	}
 
 }
@@ -90,15 +100,15 @@ function ParseFile1(file) {
 }
 
 // upload JPEG files
-function UploadFile(file) {
+function UploadFile1(file) {
 
 	//alert('salut');
 
 	var xhr = new XMLHttpRequest();
 	if (xhr.upload && (file.type == "image/jpeg" || file.type == "image/png") && file.size <= $id("MAX_FILE_SIZE").value) {
-		// start upload
+		//start upload
 		//alert('salut');
-		xhr.open("POST", $id("upload").action, true);
+		xhr.open("POST", $id("upload1").action, true);
 		xhr.setRequestHeader("X_FILENAME", file.name);
 		xhr.send(file);
 		//alert('send');
