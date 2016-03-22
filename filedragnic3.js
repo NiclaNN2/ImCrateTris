@@ -1,21 +1,27 @@
-// output information
-function Output3(file) {
+// getElementById
+function $id(id) {
+	return document.getElementById(id);
+}
+
+
+function Remplacer_photo3(file) {
 	//On remplace l'élément image par un canvas.
 
-	var photo3 = $id('photo3');
-	var photo3_figure = photo3.firstElementChild;
+		var photo3 = $id('photo3');
+		var photo3_figure = photo3.firstElementChild;
 
-	var photo3_canvas = document.createElement('canvas');
+		var photo3_canvas = document.createElement('canvas');
 
-	var ctx3 = photo3_canvas.getContext('2d');
-	var img3 = new Image();
-	img3.onload = function() {
-        ctx3.drawImage(img3, 0, 0, 250, 250);    
-    }
-	img3.src = file;  
+		var ctx3 = photo3_canvas.getContext('2d');
+		var img3 = new Image();
+		img3.onload = function() {
+	        ctx3.drawImage(img3, 0, 0, 250, 250);    
+	    }
+		img3.src = file;  
 
-	photo3.removeChild(photo3_figure);
-	photo3.appendChild(photo3_canvas);   
+		photo3.removeChild(photo3_figure);
+		photo3.appendChild(photo3_canvas);
+	
 }
 
 // call initialization file
@@ -58,8 +64,6 @@ function FileDragHover(e) {
 	e.target.className = (e.type == "dragover" ? "hover" : "");
 }
 
-
-// file selection
 function FileSelectHandler(e) {
 
 	// cancel event and hover styling
@@ -70,55 +74,88 @@ function FileSelectHandler(e) {
 
 	// process all File objects
 	for (var i = 0, f; f = files[i]; i++) {
-		ParseFile3(f);
-		UploadFile3(f);
-
+		Analyser_photo3(f);
+		if(Analyser_photo3(f)){
+			Proposer_Downloa3(adresse_download_3);
+			Replace3(f);
+			UploadFile3(f);
+		}
 	}
 
 }
 
+function Afficher_message3(msg){
+	var Message3 = $id('messages3');
+	Message3.innerHTML = msg;
+}
 
-function ParseFile3(file) {
+function Analyser_photo3(file){
 
+	var MIN_FILE_SIZE = 100000;
+	var MAX_FILE_SIZE = 10000000;
 
-	// display an image
+	if(file.type == "image/jpeg" || file.type == "image/png"){			
+		if(file.size <= MIN_FILE_SIZE){
+			Afficher_message3('Please use a larger image ! Minimum size : ' + MIN_FILE_SIZE/1000 +  ' Ko');
+			return false;
+			}
+		else if(file.size >= MAX_FILE_SIZE){
+			Afficher_message3('Please use a smaller image ! Maximum size : 10000000' + MAX_FILE_SIZE/1000000 +  ' Mo');
+			return false;
+
+			}
+		else{
+			Afficher_message3('Thanks ! Download your picture using the link below.')
+			return true;
+			}
+		}	
+	else{
+		Afficher_message3('Please use a jpeg or a png file ! ');
+		return false;
+		}
+}
+
+function Proposer_Downloa3(path){
+
+	var Message3 = $id('messages3');
+
+	var Download3 = document.createElement('p');
+	Message3.appendChild(Download3);
+
+	var Download_link3 = document.createElement('a');
+	Download_link3.innerHTML = "Download picture";
+	Download_link3.href = path;
+	Download_link3.download = 'ImCrate';
+	Download3.appendChild(Download_link3);
+
+}
+
+function Replace3(file) {
+
 	if (file.type.indexOf("image") == 0) {
 		var reader = new FileReader();
 		reader.onload = function(e) {
-			Output3(e.target.result
-				//"<p><strong>" + file.name + ":</strong><br />" +
-				//'<img src="' + e.target.result + '" /></p>'
-			);
+			Remplacer_photo3(e.target.result);
 		}
 		reader.readAsDataURL(file);
 	}
-
-
-	
+		
 }
 
-// upload JPEG files
+// upload JPEG or png files
 function UploadFile3(file) {
-
-	//alert('salut');
 
 	var xhr = new XMLHttpRequest();
 	if (xhr.upload && (file.type == "image/jpeg" || file.type == "image/png") && file.size <= $id("MAX_FILE_SIZE").value) {
-		// start upload
-		//alert('salut');
+		//start upload
 		xhr.open("POST", $id("upload3").action, true);
 		xhr.setRequestHeader("X_FILENAME", file.name);
 		xhr.send(file);
-		//alert('send');
-
 	}
 	else
 	{
-		alert('bitch');
+		alert('The upload does not work.');
 	}
-
-	//window.refresh();
-
 
 }
 

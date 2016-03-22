@@ -48,7 +48,7 @@ if($_SESSION['admin'])
 		<div class="ligne_verticale" ></div>
 		<div id="photo_graph">
 		<figure>
-    			<img src=<?php echo $adresse ?> alt="Pantheon" />
+    			<img src=<?php echo $adresse ?> alt="ImCrate" />
 		</figure>
 		</div>
 <?php

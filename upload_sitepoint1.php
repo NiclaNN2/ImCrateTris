@@ -6,10 +6,9 @@ include_once('modele/photos/photo_upload.class.php');
 include_once('modele/photos/head.php');
 
 $identi = uniqid('photo_') . '.JPG'; //nom unique de la photo
-$size=3000;
 
 $photo = new Photo_upload($identi, 1);
-$photo -> creer_Photo($identi,$size,1);
+$photo -> creer_Photo($identi,1);
 $photo -> set_date_upload($photo->getNom());
 MAJ_branche($photo->getNom(),1);
 
@@ -83,5 +82,4 @@ $newimage_graph=imagecreatetruecolor($n_width_graph,$n_height);
 imageCopyResampled($newimage_graph,$im,0,0,0,0,$n_width_graph,$n_height_graph,$width,$height);
 ImageJpeg($newimage_graph,$newname_graph);
 chmod($newname_graph,0777); 
-
 

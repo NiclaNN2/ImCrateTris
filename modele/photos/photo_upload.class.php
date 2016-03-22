@@ -37,14 +37,13 @@ class Photo_upload
         return $this->branche;
     }
     
-	public function creer_Photo($nom, $size, $branche) //On met l'identifiant du membre dans la table photo dans le champ id_proprietaire
+	public function creer_Photo($nom, $branche) //On met l'identifiant du membre dans la table photo dans le champ id_proprietaire
 	    {
 		global $bdd;
 		
-		$req2 = $bdd->prepare('INSERT INTO photos(nom_photo, size, branche) VALUES(:nom_photo, :size, :branche)');
+		$req2 = $bdd->prepare('INSERT INTO photos(nom_photo, branche) VALUES(:nom_photo, :branche)');
 		$req2->execute(array(
 		'nom_photo' => $nom,
-		'size' => $size,
 		'branche' => $branche
 		));	
 		

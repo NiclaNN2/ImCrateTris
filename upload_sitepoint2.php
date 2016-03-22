@@ -5,10 +5,9 @@ include_once('modele/photos/photo_upload.class.php');
 include_once('modele/photos/head.php');
 
 $identi = uniqid('photo_') . '.JPG'; //nom unique de la photo
-$size=3000;
 
 $photo = new Photo_upload($identi, 2);
-$photo -> creer_Photo($identi,$size,2);
+$photo -> creer_Photo($identi,2);
 $photo -> set_date_upload($photo->getNom());
 MAJ_branche($photo->getNom(),2);
 

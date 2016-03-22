@@ -5,20 +5,25 @@ $donnees = $req->fetch();
 $nom_photo =  $donnees['nom_photo'];
 $req->closeCursor();
 
-$adresse = "photos_thumbnails/".$nom_photo;
+$adresse1 = "photos_thumbnails/".$nom_photo;
+$adresse_download_1 = "photos/".$nom_photo;
 
 echo 'branche : ' . $branche . '</br>';
 
 ?>
 
 <div id='adresse_photo1'>
-	<?php echo $adresse ?>
+	<?php echo $adresse1 ?>
 </div>
 
 <div id="photo1">
 
 	<figure>
-	    <img src=<?php echo $adresse ?>  alt="Pantheon" />
+	    <img src=<?php echo $adresse1 ?>  alt="ImCrate" />
 	</figure>
 
 </div>
+
+<script>
+	var adresse_download_1 = <?php echo json_encode($adresse_download_1); ?>;
+</script>
