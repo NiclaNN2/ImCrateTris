@@ -3,6 +3,65 @@ function $id(id) {
 	return document.getElementById(id);
 }
 
+function Remplacer_Image3(file) {
+
+window.URL    = window.URL || window.webkitURL;
+useBlob   = false && window.URL; // `true` to use Blob instead of Data-URL
+
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    var image  = new Image();
+    image.addEventListener("load", function () {
+
+    var image_width = image.width;
+    var image_height = image.height;
+
+    if(image_width>image_height)
+	{
+		var n_width = 250; 
+		//var n_height = 0;
+		var n_height = parseInt(n_width * image_height / image_width);	
+	}
+	else
+	{
+		var n_height = 250; 
+		var n_width = parseInt(n_height * image_width / image_height);
+	}
+
+/*
+ 	alert('image width : ' + image_width + 
+    'image height : ' + image_height + 
+	'new image width : ' + n_width + 
+   'new image height : ' + n_height);*/
+
+
+    var photo3 = $id('photo3');
+	var photo3_figure = photo3.firstElementChild;
+
+	var photo3_canvas = document.createElement('canvas');
+
+	var ctx3 = photo3_canvas.getContext('2d');
+	var img3 = new Image();
+	img3.onload = function() {
+        ctx3.drawImage(img3, 0, 0, image_width, image_height, 0, 0, n_width, n_height);    
+    }
+	img3.src = useBlob ? window.URL.createObjectURL(file) : reader.result;  
+
+	photo3.removeChild(photo3_figure);
+	photo3.appendChild(photo3_canvas);
+	
+
+    });
+    image.src = useBlob ? window.URL.createObjectURL(file) : reader.result;
+    if (useBlob) {
+      window.URL.revokeObjectURL(file); // Free memory
+    }
+
+  });
+  reader.readAsDataURL(file);  
+     
+}
+
 
 function Remplacer_photo3(file) {
 	//On remplace l'élément image par un canvas.
@@ -77,7 +136,7 @@ function FileSelectHandler(e) {
 		Analyser_photo3(f);
 		if(Analyser_photo3(f)){
 			Proposer_Downloa3(adresse_download_3);
-			Replace3(f);
+			Remplacer_Image3(f);
 			UploadFile3(f);
 		}
 	}
@@ -125,7 +184,11 @@ function Proposer_Downloa3(path){
 	var Download_link3 = document.createElement('a');
 	Download_link3.innerHTML = "Download picture";
 	Download_link3.href = path;
-	Download_link3.download = 'ImCrate';
+	Download_link3.download = 'ImCrate_'+date_download;
+	Download_link3.addEventListener('click', function(){
+		location.reload();
+	});
+
 	Download3.appendChild(Download_link3);
 
 }

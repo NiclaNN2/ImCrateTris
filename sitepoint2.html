@@ -1,23 +1,27 @@
 <form id="upload2" action="upload_sitepoint2.php" method="POST" enctype="multipart/form-data">
 
-<fieldset>
-<legend>HTML File Upload</legend>
-
-<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="10000000" />
+<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="20000000" />
 <input type="hidden" name="branche" value="2" />
 
-<div>
-	<label for="fileselect2">Files to upload:</label>
+<div id="block2">
+	<label for="fileselect2"></label>
 	<input type="file" id="fileselect2" name="fileselect2[]" multiple="multiple" class="inputfile" />
-	<label for="fileselect2">Choose a file</label>
-	<div id="filedrag2">or drop files here</div>
+	
+	<div id="filedrag2">drop a picture here
+
+		<div id="photo2">
+			    <img src=<?php echo $adresse2 ?>  alt="ImCrate" />
+		</div>
+		
+		<label for="fileselect2">or choose a file</label>
+
+	</div>
+
 </div>
 
 <div id="submitbutton2">
 	<button type="submit">Upload Files</button>
 </div>
-
-</fieldset>
 
 </form>
 

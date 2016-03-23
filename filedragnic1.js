@@ -3,7 +3,67 @@ function $id(id) {
 	return document.getElementById(id);
 }
 
+function Remplacer_Image1(file) {
 
+window.URL    = window.URL || window.webkitURL;
+useBlob   = false && window.URL; // `true` to use Blob instead of Data-URL
+
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    var image  = new Image();
+    image.addEventListener("load", function () {
+
+    var image_width = image.width;
+    var image_height = image.height;
+
+    if(image_width>image_height)
+	{
+		var n_width = 250; 
+		//var n_height = 0;
+		var n_height = parseInt(n_width * image_height / image_width);	
+	}
+	else
+	{
+		var n_height = 250; 
+		var n_width = parseInt(n_height * image_width / image_height);
+	}
+
+/*
+ 	alert('image width : ' + image_width + 
+    'image height : ' + image_height + 
+	'new image width : ' + n_width + 
+   'new image height : ' + n_height);*/
+
+
+    var photo1 = $id('photo1');
+	var photo1_figure = photo1.firstElementChild;
+
+	var photo1_canvas = document.createElement('canvas');
+
+	var ctx1 = photo1_canvas.getContext('2d');
+	var img1 = new Image();
+	img1.onload = function() {
+        ctx1.drawImage(img1, 0, 0, image_width, image_height, 0, 0, n_width, n_height);    
+    }
+	img1.src = useBlob ? window.URL.createObjectURL(file) : reader.result;  
+
+	photo1.removeChild(photo1_figure);
+	photo1.appendChild(photo1_canvas);
+	
+
+    });
+    image.src = useBlob ? window.URL.createObjectURL(file) : reader.result;
+    if (useBlob) {
+      window.URL.revokeObjectURL(file); // Free memory
+    }
+
+  });
+  reader.readAsDataURL(file);  
+     
+}
+
+
+/*
 function Remplacer_photo1(file) {
 	//On remplace l'élément image par un canvas.
 
@@ -15,14 +75,14 @@ function Remplacer_photo1(file) {
 		var ctx1 = photo1_canvas.getContext('2d');
 		var img1 = new Image();
 		img1.onload = function() {
-	        ctx1.drawImage(img1, 0, 0, 250, 250);    
+	        ctx1.drawImage(img1, 0, 0, 200, 250);    
 	    }
 		img1.src = file;  
 
 		photo1.removeChild(photo1_figure);
 		photo1.appendChild(photo1_canvas);
 	
-}
+}*/
 
 // call initialization file
 if (window.File && window.FileList && window.FileReader) {
@@ -77,7 +137,7 @@ function FileSelectHandler(e) {
 		Analyser_photo1(f);
 		if(Analyser_photo1(f)){
 			Proposer_Download1(adresse_download_1);
-			Replace1(f);
+			Remplacer_Image1(f);
 			UploadFile1(f);
 		}
 	}
@@ -125,7 +185,12 @@ function Proposer_Download1(path){
 	var Download_link1 = document.createElement('a');
 	Download_link1.innerHTML = "Download picture";
 	Download_link1.href = path;
-	Download_link1.download = 'ImCrate';
+	Download_link1.download = 'ImCrate_'+date_download;
+
+	Download_link1.addEventListener('click', function(){
+		location.reload();
+	});
+
 	Download1.appendChild(Download_link1);
 
 }

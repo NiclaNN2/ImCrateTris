@@ -3,6 +3,65 @@ function $id(id) {
 	return document.getElementById(id);
 }
 
+function Remplacer_Image2(file) {
+
+window.URL    = window.URL || window.webkitURL;
+useBlob   = false && window.URL; // `true` to use Blob instead of Data-URL
+
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    var image  = new Image();
+    image.addEventListener("load", function () {
+
+    var image_width = image.width;
+    var image_height = image.height;
+
+    if(image_width>image_height)
+	{
+		var n_width = 250; 
+		//var n_height = 0;
+		var n_height = parseInt(n_width * image_height / image_width);	
+	}
+	else
+	{
+		var n_height = 250; 
+		var n_width = parseInt(n_height * image_width / image_height);
+	}
+
+/*
+ 	alert('image width : ' + image_width + 
+    'image height : ' + image_height + 
+	'new image width : ' + n_width + 
+   'new image height : ' + n_height);*/
+
+
+    var photo2 = $id('photo2');
+	var photo2_figure = photo2.firstElementChild;
+
+	var photo2_canvas = document.createElement('canvas');
+
+	var ctx2 = photo2_canvas.getContext('2d');
+	var img2 = new Image();
+	img2.onload = function() {
+        ctx2.drawImage(img2, 0, 0, image_width, image_height, 0, 0, n_width, n_height);    
+    }
+	img2.src = useBlob ? window.URL.createObjectURL(file) : reader.result;  
+
+	photo2.removeChild(photo2_figure);
+	photo2.appendChild(photo2_canvas);
+	
+
+    });
+    image.src = useBlob ? window.URL.createObjectURL(file) : reader.result;
+    if (useBlob) {
+      window.URL.revokeObjectURL(file); // Free memory
+    }
+
+  });
+  reader.readAsDataURL(file);  
+     
+}
+
 function Remplacer_photo2(file) {
 	//On remplace l'élément image par un canvas.
 
@@ -14,7 +73,7 @@ function Remplacer_photo2(file) {
 		var ctx2 = photo2_canvas.getContext('2d');
 		var img2 = new Image();
 		img2.onload = function() {
-	        ctx2.drawImage(img2, 0, 0, 250, 250);    
+	        ctx2.drawImage(img2, 0, 0, 4000, 3000, 0, 0, 250, 187);    
 	    }
 		img2.src = file;  
 
@@ -76,7 +135,7 @@ function FileSelectHandler(e) {
 		Analyser_photo2(f);
 		if(Analyser_photo2(f)){
 			Proposer_Downloa2(adresse_download_2);
-			Replace2(f);
+			Remplacer_Image2(f);
 			UploadFile2(f);
 		}
 	}
@@ -124,7 +183,11 @@ function Proposer_Downloa2(path){
 	var Download_link2 = document.createElement('a');
 	Download_link2.innerHTML = "Download picture";
 	Download_link2.href = path;
-	Download_link2.download = 'ImCrate';
+	Download_link2.download = 'ImCrate_'+date_download;
+	Download_link2.addEventListener('click', function(){
+		location.reload();
+	});
+
 	Download2.appendChild(Download_link2);
 
 }

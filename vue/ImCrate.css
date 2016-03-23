@@ -53,8 +53,8 @@ footer
 {
 	display: inline-block;
 	border: 1px solid black;
-	height: 300px;
-	width: 340px;
+	height: 600px;
+	width: 360px;
 	vertical-align: top;
 }
 
@@ -268,3 +268,25 @@ border          : 0px solid #def;
 	cursor: pointer; /* "hand" cursor */
 }
 
+#messages1, #messages2, #messages3
+{
+	display: block;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+#block1, #block2, #block3
+{
+	display: block;
+	border: 1px solid black;
+	margin: 10px;
+	height: 400px;
+}
+
+#photo3, #photo2, #photo1
+{
+	display: block;
+	border: 1px solid black;
+	margin: 20px;
+	height: 200px;
+}
