@@ -4,8 +4,6 @@
         <title>Gallerie</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <link href="vue/ImCrate.css" rel="stylesheet" type="text/css" /> 
-        <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
-
     </head>
         
     <header>

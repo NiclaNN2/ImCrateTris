@@ -1,22 +1,21 @@
 <form id="upload1" action="upload_sitepoint1.php" method="POST" enctype="multipart/form-data">
 
 <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="10000000" />
-<input type="hidden" name="branche" value="1" />
 
 <div id="block1">
-	<label for="fileselect1"></label>
-	<input type="file" id="fileselect1" name="fileselect1[]" multiple="multiple" class="inputfile" />
-	
+
 	<div id="filedrag1">drop a picture here
 
 		<div id="photo1">
-			    <img src=<?php echo $adresse1 ?>  alt="ImCrate" />
+			<img src=<?php echo $adresse1 ?>  alt="ImCrate" />
 		</div>
 		
 		<label for="fileselect1">or choose a file</label>
 
 	</div>
 
+	<input type="file" id="fileselect1" name="fileselect1[]" multiple="multiple" class="inputfile"/>
+	
 </div>
 
 <div id="submitbutton1">

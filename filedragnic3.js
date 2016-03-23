@@ -43,7 +43,7 @@ useBlob   = false && window.URL; // `true` to use Blob instead of Data-URL
 	var ctx3 = photo3_canvas.getContext('2d');
 	var img3 = new Image();
 	img3.onload = function() {
-        ctx3.drawImage(img3, 0, 0, image_width, image_height, 0, 0, n_width, n_height);    
+        ctx3.drawImage(img3, 0, 0, image_width, image_height, 20, 0, n_width, n_height);    
     }
 	img3.src = useBlob ? window.URL.createObjectURL(file) : reader.result;  
 

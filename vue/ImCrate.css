@@ -52,7 +52,6 @@ footer
 #photo
 {
 	display: inline-block;
-	border: 1px solid black;
 	height: 600px;
 	width: 360px;
 	vertical-align: top;
@@ -271,22 +270,72 @@ border          : 0px solid #def;
 #messages1, #messages2, #messages3
 {
 	display: block;
-	border: 1px solid black;
 	margin: 10px;
 }
 
 #block1, #block2, #block3
 {
 	display: block;
-	border: 1px solid black;
 	margin: 10px;
-	height: 400px;
+	height: 350px;
 }
 
 #photo3, #photo2, #photo1
+
 {
 	display: block;
-	border: 1px solid black;
 	margin: 20px;
 	height: 200px;
+}
+
+#fileselect1, #fileselect2, #fileselect3
+{
+	display: none;
+}
+
+body
+{
+	font-family: "Segoe UI", Tahoma, Helvetica, freesans, sans-serif;
+	font-size: 90%;
+	margin: 10px;
+	color: #333;
+	background-color: #fff;
+}
+
+h1, h2
+{
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+h2
+{
+	font-size: 1.3em;
+}
+
+legend
+{
+	font-weight: bold;
+	color: #333;
+}
+
+#filedrag
+{
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+}
+
+#filedrag.hover
+{
+	color: #f00;
+	border-color: #f00;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
 }

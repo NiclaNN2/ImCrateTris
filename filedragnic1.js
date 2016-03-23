@@ -43,7 +43,7 @@ useBlob   = false && window.URL; // `true` to use Blob instead of Data-URL
 	var ctx1 = photo1_canvas.getContext('2d');
 	var img1 = new Image();
 	img1.onload = function() {
-        ctx1.drawImage(img1, 0, 0, image_width, image_height, 0, 0, n_width, n_height);    
+        ctx1.drawImage(img1, 0, 0, image_width, image_height, 20, 0, n_width, n_height);    
     }
 	img1.src = useBlob ? window.URL.createObjectURL(file) : reader.result;  
 
@@ -62,27 +62,6 @@ useBlob   = false && window.URL; // `true` to use Blob instead of Data-URL
      
 }
 
-
-/*
-function Remplacer_photo1(file) {
-	//On remplace l'élément image par un canvas.
-
-		var photo1 = $id('photo1');
-		var photo1_figure = photo1.firstElementChild;
-
-		var photo1_canvas = document.createElement('canvas');
-
-		var ctx1 = photo1_canvas.getContext('2d');
-		var img1 = new Image();
-		img1.onload = function() {
-	        ctx1.drawImage(img1, 0, 0, 200, 250);    
-	    }
-		img1.src = file;  
-
-		photo1.removeChild(photo1_figure);
-		photo1.appendChild(photo1_canvas);
-	
-}*/
 
 // call initialization file
 if (window.File && window.FileList && window.FileReader) {

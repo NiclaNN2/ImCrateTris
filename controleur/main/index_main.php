@@ -18,7 +18,6 @@ catch(Exception $e)
 
 <div id="tout_main">
 
-
 	<div id="photo">
 	<?php
 	$branche=1;
@@ -43,12 +42,8 @@ catch(Exception $e)
     ?>
 	</div>
 
-
 </div>
 
 <?php
 
 include('vue/footer.php');
-
-$_SESSION['transfert']=false;
-$_SESSION['erreur_envoi']=false;
