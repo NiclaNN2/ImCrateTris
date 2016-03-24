@@ -85,6 +85,13 @@ background:url(../images/help_gris_rect.png) no-repeat;
 	top: 170px;
 }
 
+#feedback
+{
+	position: absolute;
+	left: 200px;
+	top: 170px;
+}
+
 #footer
 {
     position: absolute;
@@ -254,4 +261,20 @@ legend
     font-weight: bold;
     position: relative;
     left: 93px;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+input[type=text] {
+    border-color:#333;
+    width: 500px;
+    height: 30px;
+    display: block;
 }

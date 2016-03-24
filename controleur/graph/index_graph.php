@@ -27,8 +27,6 @@ include('vue/menu.php');
 	</div>
 
 
-
-
 	<div id="branche_graph">
 	<?php
 	$adresse_one_2 = 'photos_thumbnails_graph/photo_56f361543b913.JPG';
@@ -43,8 +41,6 @@ include('vue/menu.php');
 	include('vue/graph/graph_branche.php');
 	?>
 	</div>
-
-
 
 
 	<div id="branche_graph">
