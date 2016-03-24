@@ -1,14 +1,9 @@
-<footer>
+<div id="footer">
 
-            <div id="foot">
-			<p><a href="terms.php">Terms</a></p>
-			</div>
+	<p><a href="terms.php">Terms</a></p>
+	<p><a href="about.php">About</a></p>
 
-            <div id="foot">
-			<p><a href="about.php">About</a></p>
-			</div>
-
-</footer>
+</div>
        
 </body>
 

@@ -8,23 +8,7 @@ $req->closeCursor();
 $adresse3 = "photos_thumbnails/".$nom_photo;
 $adresse_download_3 = "photos/".$nom_photo;
 
-//echo 'branche : ' . $branche . '</br>';
-
 ?>
-<!--
-<div id='adresse_photo3'>
-	<?php //echo $adresse3 ?>
-</div>
--->
-<!--
-<div id="photo3">
-
-	<figure>
-	    <img src=<?php //echo $adresse3 ?>  alt="ImCrate" />
-	</figure>
-
-</div>
--->
 
 <script>
 	var adresse_download_3 = <?php echo json_encode($adresse_download_3); ?>;

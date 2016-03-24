@@ -12,7 +12,7 @@ include('vue/menu.php');
 
 	<div id="branche_graph">
 	<?php
-	$adresse_one_1 = 'modele/gallerie_thumbnails_graph/photo_56e745c0cd1ac.JPG';
+	$adresse_one_1 = 'photos_thumbnails_graph/photo_56f3611f084ee.JPG';
 	?>
 	<div id="photo_graph">
 		<figure>
@@ -31,7 +31,7 @@ include('vue/menu.php');
 
 	<div id="branche_graph">
 	<?php
-	$adresse_one_2 = 'modele/gallerie_thumbnails_graph/photo_56e73fc01a974.JPG';
+	$adresse_one_2 = 'photos_thumbnails_graph/photo_56f361543b913.JPG';
 	?>
 	<div id="photo_graph">
 		<figure>
@@ -49,7 +49,7 @@ include('vue/menu.php');
 
 	<div id="branche_graph">
 	<?php
-	$adresse_one_3 = 'modele/gallerie_thumbnails_graph/photo_56e74ac1aa2bb.JPG';
+	$adresse_one_3 = 'photos_thumbnails_graph/photo_56f361260cd1d.JPG';
 	?>
 	<div id="photo_graph">
 		<figure>
@@ -67,4 +67,4 @@ include('vue/menu.php');
 <?php
 
 
-include('vue/footer_graph.php');
+include('vue/footer.php');

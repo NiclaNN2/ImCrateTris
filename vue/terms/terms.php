@@ -1,5 +1,7 @@
 <div id="texte">
 	
-	Terms.
-
+	<p>
+	Pornographic, violent pictures are prohibited.
+	</p>
+	
 </div>

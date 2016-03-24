@@ -22,7 +22,7 @@ catch(Exception $e)
 	<?php
 	$branche=1;
 	include('vue/main/photos_branche1.php');
-	include('sitepoint1.html');
+	include('vue/main/sitepoint1.html');
     ?>
 	</div>
 
@@ -30,7 +30,7 @@ catch(Exception $e)
 	<?php
 	$branche=2;
     include('vue/main/photos_branche2.php');
-	include('sitepoint2.html');
+	include('vue/main/sitepoint2.html');
     ?>
 	</div>
 
@@ -38,7 +38,7 @@ catch(Exception $e)
 	<?php
 	$branche=3;
     include('vue/main/photos_branche3.php');
-	include('sitepoint3.html');
+	include('vue/main/sitepoint3.html');
     ?>
 	</div>
 

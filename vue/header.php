@@ -21,7 +21,7 @@
         </p>
 
         <p>
-        <form action="log_out_admin.php" method="post">
+        <form action="controleur/admin/log_out_admin.php" method="post">
         </p>
        
         </p>

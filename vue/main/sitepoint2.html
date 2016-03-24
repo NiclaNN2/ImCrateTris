@@ -1,0 +1,30 @@
+<form id="upload2" action="upload_sitepoint2.php" method="POST" enctype="multipart/form-data">
+
+<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="10000000" />
+
+<div id="block2">
+
+	<div id="filedrag2">drop a picture here
+
+		<div id="photo2">
+			<img src=<?php echo $adresse2 ?>  alt="ImCrate" />
+		</div>
+		
+		<label for="fileselect2">or choose a file</label>
+
+	</div>
+
+	<input type="file" id="fileselect2" name="fileselect2[]" multiple="multiple" class="inputfile"/>
+	
+</div>
+
+<div id="submitbutton2">
+	<button type="submit">Upload Files</button>
+</div>
+
+</form>
+
+<div id="messages2">
+</div>
+
+<script src="controleur/filedragnic2.js"></script>

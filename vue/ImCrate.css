@@ -12,42 +12,13 @@
 
 nav
 {
-    border: 2px white double;
     width: 520px;
     position: absolute;
     left: 250px;
     top: 30px;
 }
 
-footer
-{
-	display: block;
-    border: 1px solid black;
-    position: absolute;
-    top: 670px;
-    left: 200px;
 
-}
-
-#tout
-{
-	position: absolute;
-	top: 150px;
-}
-
-#foot
-{
-	display: inline-block;
-}
-
-#updown
-{
-	display: inline-block;
-	border: 1px solid black;
-	height: 200px;
-	width: 340px;
- 	vertical-align: top;
-}
 
 #photo
 {
@@ -57,59 +28,73 @@ footer
 	vertical-align: top;
 }
 
-#element
-{
-	display: block;
-}
-
-.bouton a {
+.bouton_main a {
 display:block;
-width:40px;
-line-height:20px;
+width:80px;
+line-height:60px;
 text-align:center;
 vertical-align:middle;
-background:url(../images/bouton-noir.png) no-repeat;
+background:url(../images/main_blanc_rect.png) no-repeat;
 color:white;
 text-decoration:none;
 }
-.bouton a:hover {
-background:url(../images/bouton-noir-2.png) no-repeat;
+.bouton_main a:hover {
+background:url(../images/main_gris_rect.png) no-repeat;
+}
+
+.bouton_graph a {
+display:block;
+width:80px;
+line-height:60px;
+text-align:center;
+vertical-align:middle;
+background:url(../images/graph_blanc_rect.png) no-repeat;
+color:white;
+text-decoration:none;
+}
+.bouton_graph a:hover {
+background:url(../images/graph_gris_rect.png) no-repeat;
+}
+
+.bouton_help a {
+display:block;
+width:80px;
+line-height:60px;
+text-align:center;
+vertical-align:middle;
+background:url(../images/help_blanc_rect.png) no-repeat;
+color:white;
+text-decoration:none;
+}
+.bouton_help a:hover {
+background:url(../images/help_gris_rect.png) no-repeat;
 }
 
 #branche_graph
 {
 	display: inline-block;
-	border: 1px solid black;
 	vertical-align: top;
 	width: 340px;
 	padding: 4px;
 }
 
-#corps_graph
+#corps_graph, #tout_main, #texte
 {
 	position: absolute;
-	left: 130px;
-	top: 130px;
+	left: 90px;
+	top: 170px;
 }
 
-#footer_graph
+#footer
 {
-	position: absolute;
-	top: 150px;
-	left: 10px;
-}
-
-#tout_main
-{
-	position: absolute;
-	top: 130px;
-	left: 130px;
+    position: absolute;
+    top: 640px;
+    left: 40px;
 }
 
 h1
 {
 	color: black;
-	border: 1px solid black;
 	display: block;
 	width: 130px;
 	padding: 10px;
@@ -126,17 +111,6 @@ a:link
 a
 {
 	color: black;
-}
-
-#texte
-{
-	display: block;
-	border: 1px solid black;
-	width: 800px;
-	position: absolute;
-	left: 100px;
-	top: 150px;
-
 }
 
 #photo_graph
@@ -173,73 +147,25 @@ a
 	font-size: 50%;
 }
 
-div.fileinputs {
-	position: relative;
-}
-
-div.fakefile {
-	position: relative;
-	bottom: 20px;
-	right: 33px;
-	z-index: 1;
-}
-
-input.file {
-	position: relative;
-	left: 0px;
-	-moz-opacity:0 ;
-	filter:alpha(opacity: 0);
-	opacity: 0;
-	z-index: 2;
-}
-
-#browse
-{
-	display: block;
-	margin-bottom: 10px;
-	border: 1px solid black;
-}
-
-.bouton_send
-{
-position: relative;
-left: 100px;
-background:url(../images/bouton-noir.png);
-border          : 0px solid #def;
-}
-
-#send
-{
-	display: block;
-	border: 1px solid black;
-	position: relative;
-	left: 30px;
-	width: 240px;
-
-}
-
 #filedrag1, #filedrag2, #filedrag3
 {
 	display: none;
 	font-weight: bold;
 	text-align: center;
 	padding: 1em 0;
-	margin: 1em 0;
 	color: #555;
-	border: 2px dashed #555;
-	border-radius: 7px;
+	border: 1px dashed #555;
+	border-radius: 3px;
 	cursor: default;
 }
 
 #filedrag1.hover, #filedrag2.hover, #filedrag3.hover
 {
-	color: #f00;
-	border-color: #f00;
+	color: #555;
+	border-color: #555;
 	border-style: solid;
 	box-shadow: inset 0 3px 4px #888;
 }
-
-
 
 .inputfile {
 	width: 0.1px;
@@ -270,13 +196,11 @@ border          : 0px solid #def;
 #messages1, #messages2, #messages3
 {
 	display: block;
-	margin: 10px;
 }
 
 #block1, #block2, #block3
 {
 	display: block;
-	margin: 10px;
 	height: 350px;
 }
 
@@ -297,7 +221,6 @@ body
 {
 	font-family: "Segoe UI", Tahoma, Helvetica, freesans, sans-serif;
 	font-size: 90%;
-	margin: 10px;
 	color: #333;
 	background-color: #fff;
 }
@@ -319,23 +242,16 @@ legend
 	color: #333;
 }
 
-#filedrag
+#texte
 {
-	display: none;
-	font-weight: bold;
-	text-align: center;
-	padding: 1em 0;
-	margin: 1em 0;
-	color: #555;
-	border: 2px dashed #555;
-	border-radius: 7px;
-	cursor: default;
+	display: block;
+	width: 600px;
+	position: absolute;
 }
 
-#filedrag.hover
+#Download_link
 {
-	color: #f00;
-	border-color: #f00;
-	border-style: solid;
-	box-shadow: inset 0 3px 4px #888;
+    font-weight: bold;
+    position: relative;
+    left: 93px;
 }
