@@ -277,4 +277,7 @@ input[type=text] {
     width: 500px;
     height: 30px;
     display: block;
+    font-family: "Segoe UI", Tahoma, Helvetica, freesans, sans-serif;
+	font-size: 90%;
+
 }
